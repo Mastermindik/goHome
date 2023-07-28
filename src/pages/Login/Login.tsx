@@ -35,7 +35,7 @@ function Login() {
       <Alert severity="warning" variant="filled" >{message}</Alert>
     </Collapse>
     <LoginForm loginUser={loginUser} />
-    {token?.length ? <Navigate to={"/apartments"} /> : ""}
+    {token?.length ? <Navigate to={"/"} /> : ""}
   </section>
 }
 

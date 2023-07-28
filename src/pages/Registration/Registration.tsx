@@ -36,7 +36,7 @@ function Registration() {
     </Collapse>
     <RegistrationForm registerUser={registerUser} />
     <div className={styles.bg_overlay}></div>
-    {token?.length ? <Navigate to={"/apartments"} /> : ""}
+    {token?.length ? <Navigate to={"/"} /> : ""}
   </div>
 }
 
