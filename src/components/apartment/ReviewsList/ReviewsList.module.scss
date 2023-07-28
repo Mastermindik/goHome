@@ -1,0 +1,29 @@
+.reviews_list {
+    border: 2px solid #E1EFFF;
+
+    .reviews__title {
+        padding: 1.25rem;
+        background: #E1EFFF;
+
+        h3 {
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .summ_rating {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .read_more {
+        display: block;
+        padding: 0.65rem;
+
+        text-align: center;
+        color: #000;
+        text-decoration: none;
+        background: #E1EFFF;
+        cursor: pointer;
+    }
+}

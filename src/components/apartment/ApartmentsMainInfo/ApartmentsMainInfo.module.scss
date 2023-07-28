@@ -1,0 +1,14 @@
+.apartment_header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+
+    h1 {
+        margin: 0;
+    }
+}
+
+.btn_order {
+    width: fit-content;
+    align-self: center;
+}

@@ -1,0 +1,20 @@
+.header {
+    padding: 1rem 0;
+
+    background: #0F1D2D;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        .profile {
+            display: flex;
+            gap: 0.32rem;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+    }
+}

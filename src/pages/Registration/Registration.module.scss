@@ -1,0 +1,26 @@
+.registration {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+
+    background: url("../../assets/img/auth-bg.jpg") no-repeat center;
+    background-size: cover;
+    z-index: 1;
+    .bg_overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(15, 29, 45);
+        opacity: .4;
+        z-index: 2;
+    }
+    .collapse {
+        width: 25.625rem;
+        position: absolute;
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
+    }
+}

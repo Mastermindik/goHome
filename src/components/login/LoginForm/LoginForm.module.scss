@@ -1,0 +1,20 @@
+.login_form {
+    padding: 1.9rem;
+    width: 25.625rem;
+    min-height: 18rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+
+    background: #fff;
+    z-index: 3;
+    .login_name {
+        align-self: center;
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+    .btn {
+        padding: .76rem 0;
+    }
+}

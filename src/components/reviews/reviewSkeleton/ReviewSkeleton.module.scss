@@ -1,0 +1,16 @@
+.review {
+    padding: 1.25rem;
+    border-bottom: 2px solid #E1EFFF;
+
+
+    .author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-transform: capitalize;
+
+        .photo {
+            display: flex;
+        }
+    }
+}

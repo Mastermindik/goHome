@@ -1,0 +1,22 @@
+.apartment {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+    .container {
+        display: flex;
+        gap: 1.88rem;
+        .left {
+            flex: 0 0 65%;
+
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            .btn_order {
+                width: fit-content;
+                align-self: center;
+            }
+        }
+        .right {
+            flex: auto;
+        }
+    }
+}
