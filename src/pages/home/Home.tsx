@@ -5,7 +5,7 @@ import ApartmentsItem from "../../components/home/apartment-mini-item/Apartments
 import { IApartment } from "../../models/IApartment";
 import { useGetAllApartmentQuery } from "../../store/api/apatrments.endpoint";
 import { useGetCitiesQuery } from "../../store/api/api";
-import { Filters } from "../../components/apartment/filters/Filters";
+import { Filters } from "../../components/home/filters/Filters";
 
 
 function Main() {
@@ -32,11 +32,16 @@ function Main() {
     <div className={`container ${styles.container}`}>
       <div className={styles.filters}>
         <Filters apartments={apartments} cities={cities} city={city} setCity={setCity} priceRef={priceRef} />
-        <Button variant="contained" color="warning"
-          className={styles.btn_search}
-          onClick={search} >Підбір жилта</Button>
+        {apartments.length ?
+          <Button variant="contained" color="warning"
+            className={styles.btn_search}
+            onClick={search} >Підбір жилта</Button> :
+          <Skeleton variant="rectangular" width={136} height={36} className={styles.btn_search} />}
+
       </div>
-      <p className={styles.selection}>Підбірка згідно з вибором</p>
+      {apartments.length ?
+        <p className={styles.selection}>Підбірка згідно з вибором</p> :
+        <Skeleton variant="text" width={"20%"} className={styles.selection} />}
       <div className={styles.apartments_list}>
         {!isLoading ? (filtered ? filtered : apartments).map((apartment: IApartment) =>
           <ApartmentsItem apartment={apartment} key={apartment.id} />) :
