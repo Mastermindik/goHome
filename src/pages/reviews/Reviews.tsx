@@ -42,15 +42,19 @@ function Reviews() {
 
   return <section className={styles.reviews}>
     <div className="container">
-      {apartment && user ?
+      {apartment && (user || !token) ?
         <h2>Please write your feedback</h2> :
         <Skeleton variant="text" width={"19rem"} sx={{ fontSize: "1.5rem", margin: "19.92px 0" }} />}
-      {isReviewSend ? <Alert variant="standard" severity="success">
-        Thank you for the feedback!
-      </Alert> :
-        <NewReview addReview={addReview} name={user?.name} apartment={apartment} token={token} />}
+      {apartment && !token ?
+        <Alert variant="standard" severity="warning">
+          Login to write feedback
+        </Alert> :
+        isReviewSend ? <Alert variant="standard" severity="success">
+          Thank you for the feedback!
+        </Alert> :
+          <NewReview addReview={addReview} name={user?.name} apartment={apartment} token={token} />}
       <div className={styles.existing_reviews}>
-        {apartment && user ?
+        {apartment && (user || !token) ?
           apartment?.reviews.map(review => <Review key={review.id} review={review} />) :
           Array.from(new Array(2)).map((_, index) => <ReviewSkeleton key={index} />)}
       </div>
