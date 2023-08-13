@@ -1,6 +1,7 @@
 import React from 'react'
 import { FormControl, InputLabel, Select, MenuItem, OutlinedInput, FormHelperText, Skeleton } from '@mui/material'
 import { IApartment } from '../../../models/IApartment'
+import styles from "./Filters.module.scss"
 
 type FiltersProps = {
   cities: string[],
@@ -13,7 +14,7 @@ type FiltersProps = {
 export const Filters: React.FC<FiltersProps> = ({ cities, city, setCity, priceRef, apartments }) => {
   return <>
     {apartments.length ?
-      <FormControl sx={{ m: 1, minWidth: "13.75rem" }} color="warning" size="small" >
+      <FormControl sx={{ m: 0, minWidth: "13.75rem" }} className={styles.filter} color="warning" size="small" >
         <InputLabel id="demo-simple-select-label" >City</InputLabel>
         <Select
           labelId="demo-simple-select-label"
@@ -31,7 +32,7 @@ export const Filters: React.FC<FiltersProps> = ({ cities, city, setCity, priceRe
       </FormControl> :
       <Skeleton variant='rectangular' width={220} height={40} />}
     {apartments.length ?
-      <FormControl size="small" >
+      <FormControl size="small" className={styles.filter} >
         <InputLabel>Ціна до</InputLabel>
         <OutlinedInput
           label="Ціна до"

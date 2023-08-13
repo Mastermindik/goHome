@@ -4,8 +4,9 @@
     .container {
         display: flex;
         gap: 1.88rem;
+        flex-wrap: wrap;
         .left {
-            flex: 0 0 65%;
+            flex: 1 0 65%;
 
             display: flex;
             flex-direction: column;
@@ -16,7 +17,15 @@
             }
         }
         .right {
-            flex: auto;
+            flex: 1 1 calc(35% - 11.88rem);
+        }
+    }
+}
+
+@media (max-width: 1050px) {
+    .apartment {
+        .container {
+
         }
     }
 }

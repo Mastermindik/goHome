@@ -7,3 +7,14 @@
         margin-top: 0;
     }
 }
+
+@media (max-width: 375px) {
+    .owner_info {
+        padding: .8rem;
+        font-size: .7rem;
+
+        h2 {
+            font-size: 1rem;
+        }
+    }
+}

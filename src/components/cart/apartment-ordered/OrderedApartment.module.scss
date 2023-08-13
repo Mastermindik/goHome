@@ -7,9 +7,10 @@ a {
     position: relative;
     height: 12.25rem;
     display: flex;
+    flex-wrap: wrap;
 
     .photo {
-        flex: 50%;
+        flex: 1 1 22.75rem;
 
         img {
             height: 12.25rem;
@@ -95,3 +96,27 @@ a {
         transform: rotate(0deg);
     }
 }
+
+@media (max-width: 768px) {
+    .ordered_apartment {
+        height: auto;
+        .photo {
+            img {
+                height: auto;
+            }
+        }
+        .content {
+            border-left: 2px solid #E1EFFF;
+        }
+    }
+}
+@media (max-width: 375px) {
+    .ordered_apartment {
+        .content {
+            padding: .7rem;
+            font-size: .8rem;
+            border-left: 2px solid #E1EFFF;
+        }
+    }
+}
+

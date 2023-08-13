@@ -83,10 +83,8 @@ function Apartment() {
             >{resultAddOrder.isLoading || orders.isFetching ? "Loading..." : "Забронювати"}</Button>}
       </div>
       <div className={style.right}>
-        {apartment.isLoading ? <Skeleton variant="rectangular" height={"9.5rem"} style={{ marginBottom: "1rem" }} /> :
-          <OwnerInfo apartment={apartment.currentData} />}
-        {apartment.isLoading ? <Skeleton variant="rectangular" height={"22.25rem"} /> :
-          <ReviewsList apartment={apartment.currentData} />}
+          <OwnerInfo apartment={apartment.currentData} isLoading={apartment.isLoading} />
+          <ReviewsList apartment={apartment.currentData} isLoading={apartment.isLoading} />
       </div>
     </div>
     <Snackbar open={openAdd} autoHideDuration={6000} onClose={handleClose} >
