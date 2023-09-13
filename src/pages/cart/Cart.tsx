@@ -4,16 +4,23 @@ import { Navigate, useOutletContext } from "react-router-dom";
 import { useGetOrddersQuery } from "../../store/api/order.endpoint";
 import { Button, Skeleton } from "@mui/material";
 import { IContext } from "../../App";
+import { useGetUserQuery, useLogoutUserMutation } from "../../store/api/user.endpoint";
 // import { useGetUserQuery } from "../../store/api/user.endpoint";
 
 function Cart() {
   const { token, setToken } = useOutletContext<IContext>();
   const { data: order = [], isLoading } = useGetOrddersQuery(token ? token : "");
   // const user = useGetUserQuery(token);
+
+  const [logout, logoutResult] = useLogoutUserMutation();
   function logOut() {
-    setToken("");
-    localStorage.setItem("token", "");
+    if (token) {
+      logout(token);
+      setToken("");
+      localStorage.setItem("token", "");
+    }
   }
+  
 
 
   return <div className={`container ${styles.container}`}>
